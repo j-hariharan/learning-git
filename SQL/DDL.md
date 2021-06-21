@@ -1,11 +1,12 @@
-# SQL
+# SQL DDL
 
 ## CREATE TABLE
 
 <br>
 
-### without constants
-------------
+### without constraints
+
+---
 
 ```
 create table TRANSPORT (
@@ -26,7 +27,8 @@ create table TRANSPORT (
 <br><br>
 
 ### with some constraints
------------
+
+---
 
 ```
 create table ADMIN (
@@ -56,7 +58,8 @@ _Note: this can only be executed if TRANSPORT.ROUTE is the PRIMARY KEY of that t
 <br>
 
 ### rename column
-------------
+
+---
 
 ```
 alter table ADMIN
@@ -76,7 +79,8 @@ _Note: the datatype can also be changed along with name in the same command if r
 <br><br>
 
 ### change datatype
----------
+
+---
 
 ```
 alter table ADMIN
@@ -95,7 +99,8 @@ modify ADNO char(5);
 <br><br>
 
 ### reorder columns
----------
+
+---
 
 ```
 alter table TRANSPORT
@@ -130,7 +135,8 @@ _Note: either the AFTER option or FIRST option can be used depending on requirem
 <br><br>
 
 ### add table constraints (primary key, unique, foreign key)
----------
+
+---
 
 ```
 alter table TRANSPORT
@@ -151,23 +157,24 @@ add unique (DRIVER);
 alter table ADMIN
 add foreign key (BUS) references TRANSPORT(ROUTE);
 ```
-*Note: you only need to use this if ADMIN.BUS is not already a foreign key.*
+
+_Note: you only need to use this if ADMIN.BUS is not already a foreign key._
 
 <br><br>
 
-
-
 ### add other constraints (not null, check, unique, default)
----------
+
+---
 
 ```
 alter table TRANSPORT
 modify DESTINATION varchar(20) not null;
 ```
+
 **mysql> desc TRANSPORT;**
 
 | Field       | Type        | Null | Key | Default | Extra |
-|-------------|-------------|------|-----|---------|-------|
+| ----------- | ----------- | ---- | --- | ------- | ----- |
 | DRIVER      | varchar(15) | YES  | UNI | NULL    |       |
 | ROUTE       | int(11)     | NO   | PRI | NULL    |       |
 | DESTINATION | varchar(20) | NO   |     | NULL    |       |
@@ -178,10 +185,11 @@ modify DESTINATION varchar(20) not null;
 alter table TRANSPORT
 modify DRIVER varchar(15) default 'TBD';
 ```
+
 **mysql> desc TRANSPORT;**
 
 | Field       | Type        | Null | Key | Default | Extra |
-|-------------|-------------|------|-----|---------|-------|
+| ----------- | ----------- | ---- | --- | ------- | ----- |
 | DRIVER      | varchar(15) | YES  | UNI | TBD     |       |
 | ROUTE       | int(11)     | NO   | PRI | NULL    |       |
 | DESTINATION | varchar(20) | NO   |     | NULL    |       |
@@ -189,7 +197,8 @@ modify DRIVER varchar(15) default 'TBD';
 <br><br>
 
 ### remove primary key constraint
-----------
+
+---
 
 ```
 alter table TRANSPORT
@@ -199,17 +208,16 @@ drop primary key;
 **mysql> desc TRANSPORT;**
 
 | Field       | Type        | Null | Key | Default | Extra |
-|-------------|-------------|------|-----|---------|-------|
+| ----------- | ----------- | ---- | --- | ------- | ----- |
 | DRIVER      | varchar(15) | YES  | UNI | TBD     |       |
 | ROUTE       | int(11)     | NO   |     | NULL    |       |
 | DESTINATION | varchar(20) | NO   |     | NULL    |       |
 
-
 <br><br>
 
-
 ### remove other constaints
---------------
+
+---
 
 ```
 alter table TRANSPORT
@@ -219,17 +227,18 @@ modify DRIVER varchar(15);
 **mysql> desc TRANSPORT;**
 
 | Field       | Type        | Null | Key | Default | Extra |
-|-------------|-------------|------|-----|---------|-------|
+| ----------- | ----------- | ---- | --- | ------- | ----- |
 | DRIVER      | varchar(15) | YES  | UNI | NULL    |       |
-| ROUTE       | int(11)     | NO   |     | 0       |       |
+| ROUTE       | int(11)     | NO   |     | NULL    |       |
 | DESTINATION | varchar(20) | NO   |     | NULL    |       |
 
-*Note: to remove other constraints, just modify the column and omit the constraints from the new definition.*
+_Note: to remove other constraints, just modify the column and omit the constraints from the new definition._
 
 <br><br>
 
 ### deleting a column
-----------
+
+---
 
 ```
 alter table ADMIN
@@ -239,7 +248,7 @@ drop CLASSSEC;
 **mysql> desc ADMIN;**
 
 | Field | Type        | Null | Key | Default | Extra |
-|-------|-------------|------|-----|---------|-------|
+| ----- | ----------- | ---- | --- | ------- | ----- |
 | ADNO  | char(5)     | NO   | PRI |         |       |
 | NAME  | varchar(20) | YES  |     | pending |       |
 | BUS   | int(11)     | YES  | MUL | NULL    |       |
@@ -247,7 +256,8 @@ drop CLASSSEC;
 <br><br>
 
 ### deleting a table
---------
+
+---
 
 ```
 drop table TRANSPORT;
@@ -255,4 +265,3 @@ drop table TRANSPORT;
 
 **mysql> desc TRANSPORT;**<br>
 `ERROR 1146 (42S02): Table 'test.transport' doesn't exist`
-
