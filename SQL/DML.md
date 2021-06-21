@@ -19,7 +19,7 @@
 
 ---
 
-```
+```sql
 insert into ADMIN values(5, "Akash", "12B", 15);
 ```
 
@@ -37,7 +37,7 @@ _Note: since BUS field is a foreign key, to insert this record, a bus of ROUTE 1
 
 ---
 
-```
+```sql
 insert into ADMIN(ADNO, BUS) values(4, 20);
 ```
 
@@ -54,7 +54,7 @@ _Note: primary keys and fields with NOT NULL constraints cannot be omitted._
 
 ## UPDATE RECORDS
 
-```
+```sql
 update ADMIN
 set NAME = "Anil"
 where ADNO = 4;
@@ -71,7 +71,7 @@ _Note: Any condition can be given in the WHERE clause. If more than one record s
 
 <br>
 
-```
+```sql
 update ADMIN
 set NAME = "Anup", CLASS = "12A"
 where BUS = 20;
@@ -90,7 +90,7 @@ _Note: Expressions involving values of other fields of the record and any operat
 
 ## DELETING RECORDS
 
-```
+```sql
 delete from ADMIN
 where CLASS="12A";
 ```

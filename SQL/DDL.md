@@ -30,7 +30,7 @@ create table TRANSPORT (
 
 ---
 
-```
+```sql
 create table ADMIN (
     ADNO int PRIMARY KEY,
     NAME varchar(20) DEFAULT 'pending',
@@ -61,7 +61,7 @@ _Note: this can only be executed if TRANSPORT.ROUTE is the PRIMARY KEY of that t
 
 ---
 
-```
+```sql
 alter table ADMIN
 change CLASS CLASSSEC varchar(10);
 ```
@@ -82,7 +82,7 @@ _Note: the datatype can also be changed along with name in the same command if r
 
 ---
 
-```
+```sql
 alter table ADMIN
 modify ADNO char(5);
 ```
@@ -102,7 +102,7 @@ modify ADNO char(5);
 
 ---
 
-```
+```sql
 alter table TRANSPORT
 modify DESTINATION varchar(20) after DRIVER;
 ```
@@ -117,7 +117,7 @@ modify DESTINATION varchar(20) after DRIVER;
 
 <br>
 
-```
+```sql
 alter table TRANSPORT
 modify DRIVER varchar(15) first;
 ```
@@ -138,7 +138,7 @@ _Note: either the AFTER option or FIRST option can be used depending on requirem
 
 ---
 
-```
+```sql
 alter table TRANSPORT
 add unique (DRIVER);
 ```
@@ -153,7 +153,7 @@ add unique (DRIVER);
 
 <br>
 
-```
+```sql
 alter table ADMIN
 add foreign key (BUS) references TRANSPORT(ROUTE);
 ```
@@ -166,7 +166,7 @@ _Note: you only need to use this if ADMIN.BUS is not already a foreign key._
 
 ---
 
-```
+```sql
 alter table TRANSPORT
 modify DESTINATION varchar(20) not null;
 ```
@@ -181,7 +181,7 @@ modify DESTINATION varchar(20) not null;
 
 <br>
 
-```
+```sql
 alter table TRANSPORT
 modify DRIVER varchar(15) default 'TBD';
 ```
@@ -200,7 +200,7 @@ modify DRIVER varchar(15) default 'TBD';
 
 ---
 
-```
+```sql
 alter table TRANSPORT
 drop primary key;
 ```
@@ -219,7 +219,7 @@ drop primary key;
 
 ---
 
-```
+```sql
 alter table TRANSPORT
 modify DRIVER varchar(15);
 ```
@@ -240,7 +240,7 @@ _Note: to remove other constraints, just modify the column and omit the constrai
 
 ---
 
-```
+```sql
 alter table ADMIN
 drop CLASSSEC;
 ```
@@ -259,7 +259,7 @@ drop CLASSSEC;
 
 ---
 
-```
+```sql
 drop table TRANSPORT;
 ```
 
