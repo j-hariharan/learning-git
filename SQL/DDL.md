@@ -8,7 +8,7 @@
 
 ---
 
-```
+```sql
 create table TRANSPORT (
     ROUTE int,
     DESTINATION varchar(20),
