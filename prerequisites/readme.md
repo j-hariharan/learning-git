@@ -1,7 +1,7 @@
 # Prerequisites
 The following programs were implemented to revise the theory concepts involved in multiprogramming.
 
-## 1. Creating processes:
+## Creating processes
 
 [<u>`fork.c`</u>](./fork.c)
 ```C
@@ -18,7 +18,7 @@ int main () {
 }
 ```
 
-## 2. Creating threads:
+## Creating threads
 
 [<u>`threads.c`</u>](./threads.c)
 ```C
@@ -37,9 +37,9 @@ void main () {
 }
 ```
 
-## 3. Inter-process communication
+## Inter-process communication
 
-### using shared memory
+### 1. using shared memory
 
 [<u>`shared_memory.c`</u>](./shared_memory.c)
 ```C
@@ -65,7 +65,7 @@ int main () {
 }
 ```
 
-### using pipes
+### 2. using pipes
 
 [<u>`pipes.c`</u>](./pipes.c)
 ```C
@@ -93,10 +93,10 @@ int main () {
 }
 ```
 
-## 4. Race condition
+## Race condition
 The below codes do not produce the expected output of `0` due to race condition.
 
-### in multiple processes
+### 1. in multiple processes
 
 [<u>`race_processes.c`</u>](./race_processes.c)
 ```C
@@ -125,7 +125,7 @@ int main () {
 }
 ```
 
-### in multiple threads
+### 2. in multiple threads
 
 [<u>`race_threads.c`</u>](./race_processes.c)
 ```C
@@ -159,9 +159,9 @@ void main () {
 }
 ```
 
-## 5. Process Synchronization using Semaphores
+## Process Synchronization using Semaphores
 
-### in multiple processes
+### 1. in multiple processes
 
 [<u>`semaphore_processes.c`</u>](./semaphore_processes.c)
 ```C
@@ -203,7 +203,7 @@ int main () {
 }
 ```
 
-### in multiple threads
+### 2. in multiple threads
 
 [<u>`semaphore_threads.c`</u>](./semaphore_threads.c)
 ```C
