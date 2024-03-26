@@ -127,7 +127,7 @@ int main () {
 
 ### 2. in multiple threads
 
-[<u>`race_threads.c`</u>](./race_processes.c)
+[<u>`race_threads.c`</u>](./race_threads.c)
 ```C
 void* add (void* arg) {
     int* n = (int*) arg;
