@@ -6,7 +6,7 @@ This section uses [**multi-threading concept**](../prerequisites/readme.md#creat
 
 
 ### Max Times
-`MAX_TIMES` is a marco used in both the programs for multiprocessing. This variable is used to limit the number of processes that are created during the execution of the program. It specifies the maximum depth of recursive calls for which `fork()` will be called to create child processes. After the specified recursion depth is reached, the determinant is calculated using [`naive_determinant()`](../helpers/readme.md#naive-determinant-calculator) in a single process.
+`MAX_TIMES` is a marco used in both the programs for multithreading. This variable is used to limit the number of threads that are created during the execution of the program. It specifies the maximum depth of recursive calls for which `pthread_create()` will be called to spawn child threads. After the specified recursion depth is reached, the determinant is calculated using [`naive_determinant()`](../helpers/readme.md#naive-determinant-calculator) in a single thread.
 
 
 ### Note on using `malloc()` to pass arguments to thread
