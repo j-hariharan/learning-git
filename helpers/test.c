@@ -20,6 +20,13 @@ void main (int argc, char* argv[]) {
     int M[n][n];
     generate_matrix(n, M, seed);
 
+    printf("\n");
+    for (int i=0 ; i<n ; i++) {
+        for (int j=0 ; j<n ; j++) {
+            printf("%d ", M[i][j]);
+        }
+        printf("\n");
+    }
     int t = start();
     int res = naive_determinant(n, M);
     int ms = end(t);
