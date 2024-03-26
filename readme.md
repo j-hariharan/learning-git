@@ -5,3 +5,4 @@ This project aims at optimising the brute force algorithm for computing the dete
 
 ## Index
 1. [Prerequisites](./prerequisites/readme.md)
+2. [Helpers](./helpers/readme.md)
